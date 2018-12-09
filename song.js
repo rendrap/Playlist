@@ -10,6 +10,7 @@ Song.prototype.play = function() {
  };
 
 Song.prototype.stop = function() {
+    this.isPlaying = false;
 
 };
 
@@ -17,7 +18,7 @@ Song.prototype.toHTML = function() {
 
   var htmlString = '<li';
   if(this.isPlaying){
-  htmlString += 'class="current"';
+  htmlString += ' class="current"';
   }
   htmlString += '>';
   htmlString += this.title;

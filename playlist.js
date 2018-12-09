@@ -9,6 +9,7 @@ Playlist.prototype.add = function(song) {
 
 Playlist.prototype.play = function() {
   var currentSong = this.songs[this.nowPlayingIndex];
+  console.log(currentSong);
   currentSong.play();
 };
 
@@ -18,13 +19,15 @@ Playlist.prototype.stop = function() {
 };
 
 Playlist.prototype.next = function() {
+  console.log(this);
   this.stop();
   this.nowPlayingIndex++;
 
   if(this.nowPlayingIndex === this.songs.length){
-    nowPlayingIndex = 0;
+    this.nowPlayingIndex = 0;
   }
   this.play();
+  // console.log(currentSong);
 };
 
 Playlist.prototype.renderIn = function(list) {
